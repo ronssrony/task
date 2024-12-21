@@ -44,6 +44,10 @@ export default function Home() {
     inputBox.current.focus();
   }
 
+  function handleClearAllTask(){
+    localStorage.clear() ; 
+  }
+
   function deleteItem(index) {
     const updatedList = list.filter((_, i) => i !== index);
     setList(updatedList);
@@ -71,6 +75,9 @@ export default function Home() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
+        <button className="absolute right-0 top-0 p-10 " onClick={handleClearAllTask}>
+          Clear All task
+        </button>
         <button 
           className="bg-slate-300 py-1 px-2 rounded text-black" 
           type="button" 
